@@ -1,0 +1,290 @@
+<UserControl
+    x:Class="KGKMarkingStudio.Views.MainView"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:KGKMarkingStudio.ViewModels"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    x:DataType="vm:MainViewModel"
+    mc:Ignorable="d">
+    <Design.DataContext>
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <UserControl.Resources>
+
+        <ControlTheme x:Key="MenuToggleButtonTheme" TargetType="ToggleButton">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Opacity" Value="0.6" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Width" Value="40" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:2" />
+                </Transitions>
+            </Setter>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border x:Name="menuBackBorder" CornerRadius="3">
+                        <Panel>
+                            <!--  默认显示 back 图标  -->
+                            <PathIcon
+                                x:Name="BackIcon"
+                                Width="24"
+                                Height="24"
+                                Background="{TemplateBinding Background}"
+                                Data="{TemplateBinding Content}"
+                                Foreground="{TemplateBinding Foreground}" />
+                        </Panel>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+
+            <!--  交互状态  -->
+            <Style Selector="^:pointerover /template/ Border">
+                <!--  鼠标悬停效果  -->
+                <Setter Property="Background" Value="#0078D4" />
+                <Setter Property="RotateTransform.Angle" Value="0" />
+
+            </Style>
+
+            <Style Selector="^:pressed /template/ Border">
+                <!--  按下效果  -->
+                <Setter Property="Background" Value="#005A9E" />
+                <Setter Property="RotateTransform.Angle" Value="90" />
+            </Style>
+
+            <Style Selector="^:checked">
+                <!--  按下效果  -->
+                <Setter Property="Content" Value="{StaticResource BootstrapMenu}" />
+            </Style>
+
+            <Style Selector="^:unchecked">
+                <!--  按下效果  -->
+                <Setter Property="Content" Value="{StaticResource BootstrapBack}" />
+            </Style>
+
+        </ControlTheme>
+
+        <ControlTheme x:Key="MenuRadioButton" TargetType="RadioButton">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="MinHeight" Value="45" />
+            <Setter Property="Padding" Value="10 0" />
+            <Setter Property="Margin" Value="8" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                        <StackPanel Orientation="Horizontal">
+                            <!--  默认显示 back 图标  -->
+                            <PathIcon
+                                x:Name="BackIcon"
+                                Width="28"
+                                Height="28"
+                                Margin="7"
+                                Background="{TemplateBinding Background}"
+                                Data="{TemplateBinding Content}"
+                                Foreground="{TemplateBinding Foreground}" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Foreground="{TemplateBinding Foreground}"
+                                Text="{TemplateBinding Tag}" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+
+            <!--  交互状态  -->
+            <Style Selector="^:pointerover">
+                <!--  鼠标悬停效果  -->
+                <Setter Property="Background" Value="#0078D4" />
+
+            </Style>
+
+            <Style Selector="^:pressed">
+                <!--  按下效果  -->
+                <Setter Property="Background" Value="#005A9E" />
+            </Style>
+
+            <Style Selector="^:checked">
+                <!--  选中效果  -->
+                <Setter Property="Background" Value="#0078D4" />
+            </Style>
+
+            <Style Selector="^:checked">
+                <!--  选中效果  -->
+                <Setter Property="Foreground" Value="#FFFFFF" />
+            </Style>
+
+            <!--<Style Selector="^:unchecked">
+                ~1~ 未选中效果 @1@
+                <Setter Property="Foreground" Value="#E4E4E4"/>
+            </Style>-->
+        </ControlTheme>
+
+    </UserControl.Resources>
+
+    <Grid RowDefinitions="Auto, *">
+
+        <Grid ColumnDefinitions="Auto,*">
+            <!--  Logo  -->
+            <Border Background="#272B2F">
+                <Image
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Width="160"
+                    Margin="10,5,0,5"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Source="../Assets/Images/kgk_logo_w.png"
+                    Stretch="Fill" />
+            </Border>
+
+            <!--  Header  -->
+            <Grid
+                Grid.Row="0"
+                Grid.Column="1"
+                Background="#272B2F"
+                ColumnDefinitions="*,*,Auto">
+                <StackPanel
+                    Grid.Column="2"
+                    Margin="10,0"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal"
+                    Spacing="10">
+                    <Button
+                        Width="32"
+                        Height="32"
+                        Padding="1"
+                        Classes="Flat"
+                        CornerRadius="16"
+                        ToolTip.Tip="Message">
+                        <materialIcons:MaterialIcon Kind="Info" />
+                    </Button>
+                    <Button
+                        Width="32"
+                        Height="32"
+                        Padding="1"
+                        Classes="Flat"
+                        CornerRadius="16"
+                        Theme="{StaticResource MaterialFlatButton}"
+                        ToolTip.Tip="Setting">
+                        <materialIcons:MaterialIcon Kind="Settings" />
+                    </Button>
+
+                    <Button
+                        Width="32"
+                        Height="32"
+                        Padding="4"
+                        Classes="Flat"
+                        Content="Menu"
+                        CornerRadius="16" />
+
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="10,0"
+                        VerticalAlignment="Center"
+                        FontSize="16"
+                        FontWeight="Heavy"
+                        Foreground="WhiteSmoke"
+                        Text="KGK MARKING STUDIO" />
+                    <TextBlock
+                        Margin="10,0"
+                        FontSize="12"
+                        FontStyle="Italic"
+                        Foreground="WhiteSmoke"
+                        Opacity="0.5"
+                        Text="Ver 1.0.0.0" />
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
+            <!--  Left Menu  -->
+            <Border
+                Name="LeftMenu"
+                Grid.Column="0"
+                Width="200"
+                Margin="0"
+                HorizontalAlignment="Left"
+                Background="LightSlateGray">
+                <StackPanel Margin="0">
+                    <ToggleButton
+                        Margin="10,3,3,15"
+                        Padding="4"
+                        HorizontalAlignment="Left"
+                        FontSize="50"
+                        Theme="{StaticResource MenuToggleButtonTheme}">
+                        <Interaction.Behaviors>
+                            <EventTriggerBehavior EventName="IsCheckedChanged">
+                                <InvokeCommandAction Command="{Binding HamburgerMenuCommand}" CommandParameter="{Binding ElementName=LeftMenu}" />
+                            </EventTriggerBehavior>
+                        </Interaction.Behaviors>
+
+                    </ToggleButton>
+
+                    <RadioButton
+                        Command="{Binding DashboardCommand}"
+                        Content="{StaticResource BootstrapDashboard}"
+                        Foreground="White"
+                        GroupName="3"
+                        IsChecked="True"
+                        Tag="Dashboard"
+                        Theme="{StaticResource MenuRadioButton}"
+                        ToolTip.Tip="Dashboard" />
+                    <RadioButton
+                        Command="{Binding DesignerCommand}"
+                        Content="{StaticResource BootstrapDesign}"
+                        GroupName="3"
+                        Tag="Designer"
+                        Theme="{StaticResource MenuRadioButton}"
+                        ToolTip.Tip="Designer" />
+                    <RadioButton
+                        Command="{Binding MaterialCommand}"
+                        Content="{StaticResource BootstrapRule}"
+                        GroupName="3"
+                        Tag="Material"
+                        Theme="{StaticResource MenuRadioButton}"
+                        ToolTip.Tip="Material" />
+                    <RadioButton
+                        Command="{Binding SettingsCommand}"
+                        Content="{StaticResource BootstrapSetting}"
+                        GroupName="3"
+                        Tag="Settings"
+                        Theme="{StaticResource MenuRadioButton}"
+                        ToolTip.Tip="Settings" />
+                    <RadioButton
+                        Command="{Binding UsersCommand}"
+                        Content="{StaticResource BootstrapAccount}"
+                        GroupName="3"
+                        Tag="Account"
+                        Theme="{StaticResource MenuRadioButton}"
+                        ToolTip.Tip="Account" />
+
+                </StackPanel>
+            </Border>
+
+
+            <ContentControl Grid.Column="1" 
+                            Content="{Binding CurrentPage}"/>
+        </Grid>
+
+
+    </Grid>
+
+</UserControl>

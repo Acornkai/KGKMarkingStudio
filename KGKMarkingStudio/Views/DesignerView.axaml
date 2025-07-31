@@ -1,0 +1,235 @@
+﻿<UserControl
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="KGKMarkingStudio.Views.DesignerView"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:KGKMarkingStudio.ViewModels" 
+    xmlns:local="using:KGKMarkingStudio.Controls.Editor"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <UserControl.Resources>
+        <!--<ControlTheme x:Key="btnRb" TargetType="RadioButton" BasedOn="{StaticResource {x:Type RadioButton}}">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="ClipToBounds" Value="False" />
+            <Setter Property="Padding" Value="10, 4" /> 
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Panel x:Name="PART_RootPanel">
+                            <ContentPresenter x:Name="PART_ContentPresenter"
+                                              BorderBrush="{TemplateBinding BorderBrush}" 
+                                              BorderThickness="{TemplateBinding BorderThickness}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              Content="{TemplateBinding Content}"
+                                              Padding="{TemplateBinding Padding}"
+                                              TextBlock.Foreground="{TemplateBinding Foreground}"
+                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <Border x:Name="PART_BehaviourEffect" />
+                        </Panel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter> 
+            
+            <Style Selector="^ /template/ Border#PART_BehaviourEffect">
+                <Setter Property="Opacity" Value="0" />
+                <Setter Property="Background" Value="Bisque" />
+                <Setter Property="IsHitTestVisible" Value="False" />
+            </Style>
+        
+            <Style Selector="^:not(.no-transitions) /template/ Border#PART_BehaviourEffect">
+                <Setter Property="Transitions">
+                    <Transitions>
+                        <DoubleTransition Property="Opacity" Duration="0.2" Easing="CircularEaseOut" />
+                    </Transitions>
+                </Setter>
+            </Style>
+        
+            <Style Selector="^:checked /template/ Border#PART_BehaviourEffect">
+                <Setter Property="Opacity" Value="0.24" />
+            </Style>
+        
+            <Style Selector="^.accent">
+                <Setter Property="Foreground" Value="#845632" />
+                <Setter Property="BorderBrush" Value="#845632" />
+            </Style>
+        </ControlTheme>-->
+         
+    </UserControl.Resources>
+    
+    <UserControl.Styles>
+        <Style Selector="Border.draggable">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{DynamicResource SystemAccentColor}" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Padding" Value="16" />
+        </Style>
+    </UserControl.Styles>
+    
+
+    <Design.DataContext>
+        <vm:DesignerViewModel />
+    </Design.DataContext>
+
+    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,*">
+        <!-- Head Menu -->
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Height="45">
+            <ComboBox MinWidth="180" Margin="5"></ComboBox>
+            <CheckBox Content="Show Line?" Margin="5"></CheckBox>
+
+            <Separator>
+                <Separator.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="90" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Separator.RenderTransform>
+            </Separator>
+
+            <RadioButton GroupName="rbalign" >
+                <PathIcon Data="{StaticResource text_align_left_regular}"></PathIcon>
+            </RadioButton>
+            <RadioButton GroupName="rbalign" >
+                <PathIcon Data="{StaticResource text_align_center_regular}"></PathIcon>
+            </RadioButton> 
+            <RadioButton GroupName="rbalign" >
+                <PathIcon Data="{StaticResource text_align_right_regular}"></PathIcon>
+            </RadioButton> 
+            
+            <Separator>
+                <Separator.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="90" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Separator.RenderTransform>
+            </Separator>
+            
+            <WrapPanel VerticalAlignment="Center" >
+                <TextBlock Text="Type : TEXT" Margin="5"/>
+                <TextBlock Text="ID : 1" Margin="5"/>
+                <TextBlock Text="X : 00001" Margin="5"/>
+                <TextBlock Text="Y : 00" Margin="5"/>
+            </WrapPanel>
+
+        </StackPanel>
+
+        <!-- Left Menu -->
+        <Border Grid.Row="1" BorderThickness="0"
+                BorderBrush="DeepSkyBlue"
+                HorizontalAlignment="Left"
+                Margin="5"
+                Padding="5"
+                CornerRadius="3">
+            <StackPanel HorizontalAlignment="Center">
+
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="3" 
+                        ToolTip.Tip="文本"
+                        Margin=" 0 5">
+                    <PathIcon Width="32" Height="32" Margin="5" 
+                              Data="{StaticResource BootstrapText}">
+                    </PathIcon>
+                </Border>
+                
+
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="3" 
+                        ToolTip.Tip="二维码"
+                        Margin=" 0 5">
+                    <PathIcon Width="32" Height="32" Margin="5"
+                              Data="{StaticResource BootstrapQr}">
+                    </PathIcon>
+                </Border>
+                
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="3" Margin=" 0 5">
+                    <PathIcon Width="32" Height="32" Margin="5"
+                              Data="{StaticResource BootstrapBarcode}">
+                    </PathIcon> 
+                </Border>
+                
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="3" Margin=" 0 5">
+                    <PathIcon Width="32" Height="32" Margin="5 7"
+                              Data="{StaticResource BootstrapNumber}">
+                    </PathIcon>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="3" Margin=" 0 5">
+                    <PathIcon Width="32" Height="32" Margin="5 7"
+                              Data="{StaticResource BootstrapCalendar}">
+                    </PathIcon> 
+                </Border>
+                
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="3" Margin=" 0 5">
+                    <PathIcon Width="32" Height="32" Margin="5 7"
+                              Data="{StaticResource BootstrapDistance}">
+                    </PathIcon>
+                </Border>
+                
+                <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="3" Margin=" 0 5">
+                    <PathIcon Width="32" Height="32" Margin="5 7"
+                              Data="{StaticResource BootstrapImage}">
+                    </PathIcon>
+                </Border>
+                
+            </StackPanel>
+        </Border>
+        
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Spacing="4">
+            <TextBlock >Example of Drag+Drop capabilities</TextBlock>
+
+            <WrapPanel HorizontalAlignment="Center">
+                <StackPanel Margin="8"
+                            MaxWidth="160">
+                    <Border Name="DragMeText"
+                            Classes="draggable">
+                        <TextBlock Name="DragStateText" TextWrapping="Wrap">Drag Me (text)</TextBlock>
+                    </Border>
+                    <Border Name="DragMeFiles"
+                            Classes="draggable">
+                        <TextBlock Name="DragStateFiles" TextWrapping="Wrap">Drag Me (files)</TextBlock>
+                    </Border>
+                    <Border Name="DragMeCustom"
+                            Classes="draggable">
+                        <TextBlock Name="DragStateCustom" TextWrapping="Wrap">Drag Me (custom)</TextBlock>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Margin="8"
+                            Orientation="Vertical"
+                            Spacing="16">
+                    <Border Name="CopyTarget"
+                            Padding="16"
+                            MaxWidth="260"
+                            Background="{DynamicResource SystemAccentColorDark1}"
+                            DragDrop.AllowDrop="True">
+                        <TextBlock TextWrapping="Wrap">Drop some text or files here (Copy)</TextBlock>
+                    </Border>
+                    <Border Name="MoveTarget"
+                            Padding="16"
+                            MaxWidth="260"
+                            Background="{DynamicResource SystemAccentColorDark1}"
+                            DragDrop.AllowDrop="True">
+                        <TextBlock TextWrapping="Wrap">Drop some text or files here (Move)</TextBlock>
+                    </Border>
+                    
+                    <!--<design:DesignerCanvasView x:Name="CopyCanvas" 
+                                               Width="300" Height="300"
+                                               DragDrop.AllowDrop="True"/>-->
+                    <local:PageView DragDrop.AllowDrop="True"></local:PageView>
+                    
+                </StackPanel>
+            </WrapPanel>
+
+            <TextBlock x:Name="DropState" TextWrapping="Wrap" />
+        </StackPanel>
+        
+    </Grid>
+
+
+</UserControl>

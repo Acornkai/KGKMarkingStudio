@@ -1,0 +1,83 @@
+﻿<UserControl
+    x:Class="KGKMarkingStudio.Controls.Editor.PageView"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behaviors="using:KGKMarkingStudio.Behaviors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="using:Avalonia.Xaml.Interactivity"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:paz="using:Avalonia.Controls.PanAndZoom"
+    xmlns:renderer="using:KGKMarkingStudio.Views.Renderer"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <VisualBrush
+            x:Key="TemplateCheckerBoard"
+            DestinationRect="0,0,20,20"
+            SourceRect="0,0,20,20"
+            TileMode="Tile">
+            <VisualBrush.Visual>
+                <Path Data="M 0,0 L 0,10 L 10,10 L 10,0 Z M 10,10 L 10,20 L 20,20 L 20,10 Z" Fill="#FFF0F0F0" />
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </UserControl.Resources>
+
+    <Panel Background="Red">
+        <Panel x:CompileBindings="False" Background="Transparent">
+            <i:Interaction.Behaviors>
+                <behaviors:AttachEditorBehavior />
+            </i:Interaction.Behaviors>
+
+            <Panel Background="#FFF5F5F5" />
+            <Panel Background="{DynamicResource TemplateCheckerBoard}" />
+            <Panel>
+                <Panel ClipToBounds="True">
+                    <ScrollViewer
+                        x:Name="PageScrollViewer"
+                        HorizontalScrollBarVisibility="Disabled"
+                        VerticalScrollBarVisibility="Disabled">
+                        <paz:ZoomBorder
+                            x:Name="PageZoomBorder"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Background="Transparent"
+                            ClipToBounds="False"
+                            Stretch="None"
+                            ZoomSpeed="1.5">
+                            <Panel
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                ClipToBounds="False">
+                                <Panel.Transitions>
+                                    <Transitions>
+                                        <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.1" />
+                                    </Transitions>
+                                </Panel.Transitions>
+                                <Panel
+                                    x:Name="ContainerPanel"
+                                    Width="500"
+                                    Height="350"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Background="Transparent"
+                                    ClipToBounds="False">
+
+                                    <renderer:RenderView x:Name="RenderViewData" ClipToBounds="False" />
+
+                                    <renderer:RenderView x:Name="RenderViewTemplate" ClipToBounds="False" />
+
+                                    <renderer:RenderView x:Name="RenderViewEditor" ClipToBounds="False" />
+
+
+                                </Panel>
+                            </Panel>
+                        </paz:ZoomBorder>
+                    </ScrollViewer>
+                </Panel>
+
+            </Panel>
+        </Panel>
+    </Panel>
+
+</UserControl>

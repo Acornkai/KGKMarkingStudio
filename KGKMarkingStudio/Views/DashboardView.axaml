@@ -1,0 +1,89 @@
+﻿<UserControl
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="KGKMarkingStudio.Views.DashboardView"
+    x:DataType="vm:DashboardViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Avalonia;assembly=LiveChartsCore.SkiaSharpView.Avalonia"
+    xmlns:material="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:KGKMarkingStudio.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.DataContext>
+        <vm:DashboardViewModel />
+    </Design.DataContext>
+
+    <Grid ColumnDefinitions="*,*" RowDefinitions="*, 2*">
+        <material:Card Margin="5">
+            <StackPanel>
+                <Image Source="../Assets/Images/kgk_logo_w.png" />
+                <TextBlock Classes="Hea" Text="Dashboard" />
+            </StackPanel>
+
+        </material:Card>
+
+        <material:Card
+            Grid.Column="0"
+            Grid.Row="1"
+            Margin="10"
+            Padding="20">
+            <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,200">
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="0"
+                    Text="OVERAL STATISTICS" />
+
+                <TextBlock
+                    FontSize="32"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    HorizontalAlignment="Left"
+                    Margin="10,20,0,0"
+                    Text="42" />
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    HorizontalAlignment="Left"
+                    Margin="10,0,0,0"
+                    Text="Engineers" />
+
+                <TextBlock
+                    FontSize="32"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Margin="10,20,0,0"
+                    Text="14523" />
+                <TextBlock
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Text="Decoding times" />
+
+                <lvc:PieChart
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="3"
+                    />
+
+            </Grid>
+        </material:Card>
+
+        <material:Card
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="10">
+            <Grid RowDefinitions="Auto,*">
+                <TextBlock
+                    Grid.Row="0"
+                    Margin="15"
+                    Text="OFFICE STATISTICS" />
+                <lvc:CartesianChart
+                    Grid.Row="1"/>
+            </Grid>
+
+        </material:Card>
+    </Grid>
+</UserControl>
