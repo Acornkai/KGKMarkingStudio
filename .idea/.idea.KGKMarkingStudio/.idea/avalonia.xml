@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="KGKMarkingStudio/App.axaml" value="KGKMarkingStudio.Browser/KGKMarkingStudio.Browser.csproj" />
+        <entry key="KGKMarkingStudio/Assets/Styles/Icons.axaml" value="KGKMarkingStudio.Browser/KGKMarkingStudio.Browser.csproj" />
+        <entry key="KGKMarkingStudio/Assets/Styles/bootstrapicon.axaml" value="KGKMarkingStudio.Browser/KGKMarkingStudio.Browser.csproj" />
+        <entry key="KGKMarkingStudio/Controls/Editor/PageView.axaml" value="KGKMarkingStudio.Desktop/KGKMarkingStudio.Desktop.csproj" />
+        <entry key="KGKMarkingStudio/Views/Controls/Editor/DesignerCanvasView.axaml" value="KGKMarkingStudio.Desktop/KGKMarkingStudio.Desktop.csproj" />
+        <entry key="KGKMarkingStudio/Views/Controls/Editor/ItemsView.axaml" value="KGKMarkingStudio.Browser/KGKMarkingStudio.Browser.csproj" />
+        <entry key="KGKMarkingStudio/Views/DashboardView.axaml" value="KGKMarkingStudio.Desktop/KGKMarkingStudio.Desktop.csproj" />
+        <entry key="KGKMarkingStudio/Views/DesignerView.axaml" value="KGKMarkingStudio.Desktop/KGKMarkingStudio.Desktop.csproj" />
+        <entry key="KGKMarkingStudio/Views/MainView.axaml" value="KGKMarkingStudio.Desktop/KGKMarkingStudio.Desktop.csproj" />
+        <entry key="KGKMarkingStudio/Views/MainWindow.axaml" value="KGKMarkingStudio.Browser/KGKMarkingStudio.Browser.csproj" />
+        <entry key="KGKMarkingStudio/Views/MaterialView.axaml" value="KGKMarkingStudio.Browser/KGKMarkingStudio.Browser.csproj" />
+        <entry key="KGKMarkingStudio/Views/Modules/ToolBoxItemView.axaml" value="KGKMarkingStudio.Browser/KGKMarkingStudio.Browser.csproj" />
+        <entry key="KGKMarkingStudio/Views/Renderer/RenderView.axaml" value="KGKMarkingStudio.Desktop/KGKMarkingStudio.Desktop.csproj" />
+        <entry key="KGKMarkingStudio/Views/SettingsView.axaml" value="KGKMarkingStudio.Desktop/KGKMarkingStudio.Desktop.csproj" />
+        <entry key="KGKMarkingStudio/Views/UsersView.axaml" value="KGKMarkingStudio.Browser/KGKMarkingStudio.Browser.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
