@@ -1,14 +1,58 @@
 ﻿using System;
-using KGKMarkingStudio.Model.Renderer;
-using KGKMarkingStudio.ViewModels.Renderer;
+using KGKMarkingStudio.Model.Editor;
+using System.Collections.Generic;
+using KGKMarkingStudio.ViewModels.Shapes;
+using KGKMarkingStudio.ViewModels.Editors;
+
+
 
 namespace KGKMarkingStudio.ViewModels.Editor;
 
-public class ProjectEditorViewModel
+public partial class ProjectEditorViewModel : ViewModelBase, IDialogPresenter
 {
-    private readonly Lazy<IShapeRenderer?>? _renderer;
+    public ProjectEditorViewModel(IServiceProvider? serviceProvider) : base(serviceProvider)
+    {
 
-    public IShapeRenderer? Renderer => _renderer?.Value;
+    }
 
-    public ShapeRendererStateViewModel? PageState => _renderer?.Value?.State;
+    public override object Copy(IDictionary<object, object>? source)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowDialog(DialogViewModel? dialog)
+    {
+        if (dialog is { })
+        {
+            _dialogs?.Add(dialog);
+        }
+    }
+
+    public void CloseDialog(DialogViewModel? dialog)
+    {
+        if (dialog is { })
+        {
+            _dialogs?.Remove(dialog);
+        }
+    }
+
+    public DialogViewModel CreateTextBindingDialog(TextShapeViewModel text)
+    {
+        var textBindingEditor = new TextBindingEditorViewModel(ServiceProvider)
+        {
+            Editor = this,
+            Text = text
+        };
+
+        return new DialogViewModel(ServiceProvider, this)
+        {
+            Title = "Text Binding",
+            IsOverlayVisible = false,
+            IsTitleBarVisible = true,
+            IsCloseButtonVisible = true,
+            ViewModel = textBindingEditor
+
+        }; 
+    }
+
 }
