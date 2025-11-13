@@ -8,7 +8,7 @@ namespace KGKMarkingStudio.ViewModels.Containers;
 
 public partial class LayerContainerViewModel : BaseContainerViewModel
 {
-    public LayerContainerViewModel(IServiceProvider? serviceProvider, bool isVisible, bool isExpanded) : base(serviceProvider, isVisible, isExpanded)
+    public LayerContainerViewModel(IServiceProvider? serviceProvider) : base(serviceProvider)
     {
     }
 

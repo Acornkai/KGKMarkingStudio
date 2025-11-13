@@ -33,21 +33,24 @@ public class ProjectEditorInputTarget : InputTarget
 
     public override bool IsBeginUpAvailable()
     {
-        throw new System.NotImplementedException();
+        return _editor.Project?.CurrentContainer?.CurrentLayer is { }
+            && _editor.Project.CurrentContainer.CurrentLayer.IsVisible;
     }
 
     public override bool IsEndDownAvailable()
     {
-        throw new System.NotImplementedException();
+        return _editor.Project?.CurrentContainer?.CurrentLayer is { }
+            && _editor.Project.CurrentContainer.CurrentLayer.IsVisible;
     }
 
     public override bool IsEndUpAvailable()
     {
-        throw new System.NotImplementedException();
+        return _editor.Project?.CurrentContainer?.CurrentLayer is { }
+            && _editor.Project.CurrentContainer.CurrentLayer.IsVisible;
     }
 
     public override bool IsMoveAvailable()
     {
-        throw new System.NotImplementedException();
+        return _editor.Project?.SelectedShapes is { };
     }
 }

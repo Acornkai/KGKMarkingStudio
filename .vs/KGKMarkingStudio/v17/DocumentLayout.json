@@ -1,15 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Working\\Project\\KGKStandardToolkit\\KGKMarkingStudio\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EBFA8512-1EA5-4D8C-B4AC-AB5B48A6D568}|KGKMarkingStudio\\KGKMarkingStudio.csproj|d:\\working\\project\\kgkstandardtoolkit\\kgkmarkingstudio\\kgkmarkingstudio\\behaviors\\attacheditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBFA8512-1EA5-4D8C-B4AC-AB5B48A6D568}|KGKMarkingStudio\\KGKMarkingStudio.csproj|solutionrelative:kgkmarkingstudio\\behaviors\\attacheditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBFA8512-1EA5-4D8C-B4AC-AB5B48A6D568}|KGKMarkingStudio\\KGKMarkingStudio.csproj|d:\\working\\project\\kgkstandardtoolkit\\kgkmarkingstudio\\kgkmarkingstudio\\viewmodels\\editor\\projecteditorviewmodel.properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBFA8512-1EA5-4D8C-B4AC-AB5B48A6D568}|KGKMarkingStudio\\KGKMarkingStudio.csproj|solutionrelative:kgkmarkingstudio\\viewmodels\\editor\\projecteditorviewmodel.properties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBFA8512-1EA5-4D8C-B4AC-AB5B48A6D568}|KGKMarkingStudio\\KGKMarkingStudio.csproj|d:\\working\\project\\kgkstandardtoolkit\\kgkmarkingstudio\\kgkmarkingstudio\\viewmodels\\editor\\dialogviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBFA8512-1EA5-4D8C-B4AC-AB5B48A6D568}|KGKMarkingStudio\\KGKMarkingStudio.csproj|solutionrelative:kgkmarkingstudio\\viewmodels\\editor\\dialogviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 1638,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,11 +35,50 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AttachEditor.cs",
+              "DocumentMoniker": "D:\\Working\\Project\\KGKStandardToolkit\\KGKMarkingStudio\\KGKMarkingStudio\\Behaviors\\AttachEditor.cs",
+              "RelativeDocumentMoniker": "KGKMarkingStudio\\Behaviors\\AttachEditor.cs",
+              "ToolTip": "D:\\Working\\Project\\KGKStandardToolkit\\KGKMarkingStudio\\KGKMarkingStudio\\Behaviors\\AttachEditor.cs",
+              "RelativeToolTip": "KGKMarkingStudio\\Behaviors\\AttachEditor.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAIA0wFQAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T09:06:56.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProjectEditorViewModel.Properties.cs",
+              "DocumentMoniker": "D:\\Working\\Project\\KGKStandardToolkit\\KGKMarkingStudio\\KGKMarkingStudio\\ViewModels\\Editor\\ProjectEditorViewModel.Properties.cs",
+              "RelativeDocumentMoniker": "KGKMarkingStudio\\ViewModels\\Editor\\ProjectEditorViewModel.Properties.cs",
+              "ToolTip": "D:\\Working\\Project\\KGKStandardToolkit\\KGKMarkingStudio\\KGKMarkingStudio\\ViewModels\\Editor\\ProjectEditorViewModel.Properties.cs",
+              "RelativeToolTip": "KGKMarkingStudio\\ViewModels\\Editor\\ProjectEditorViewModel.Properties.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T09:06:34.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DialogViewModel.cs",
+              "DocumentMoniker": "D:\\Working\\Project\\KGKStandardToolkit\\KGKMarkingStudio\\KGKMarkingStudio\\ViewModels\\Editor\\DialogViewModel.cs",
+              "RelativeDocumentMoniker": "KGKMarkingStudio\\ViewModels\\Editor\\DialogViewModel.cs",
+              "ToolTip": "D:\\Working\\Project\\KGKStandardToolkit\\KGKMarkingStudio\\KGKMarkingStudio\\ViewModels\\Editor\\DialogViewModel.cs",
+              "RelativeToolTip": "KGKMarkingStudio\\ViewModels\\Editor\\DialogViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T08:18:46.937Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 1058,
+          "DockedWidth": 2496,
           "SelectedChildIndex": -1,
           "Children": [
             {

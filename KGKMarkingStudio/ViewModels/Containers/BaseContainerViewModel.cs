@@ -8,10 +8,10 @@ public abstract partial class BaseContainerViewModel : ViewModelBase
     [AutoNotify] private bool _isVisible;
     [AutoNotify] private bool _isExpanded;
 
-    public BaseContainerViewModel(IServiceProvider? serviceProvider, bool isVisible, bool isExpanded) : base(serviceProvider)
+    public BaseContainerViewModel(IServiceProvider? serviceProvider) : base(serviceProvider)
     {
-        _isVisible = isVisible;
-        _isExpanded = isExpanded;
+        _isVisible = true;
+        _isExpanded = false;
     }
 
     

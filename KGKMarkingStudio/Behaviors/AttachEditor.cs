@@ -32,10 +32,10 @@ public class AttachEditor
         var state = projectEditor.PageState;
         if (state is { })
         {
-            state.ZoomX = zoomX;
-            state.ZoomY = zoomY;
-            state.PanX = offsetX;
-            state.PanY = offsetY;
+           state.ZoomX = zoomX;
+           state.ZoomY = zoomY;
+           state.PanX = offsetX;
+           state.PanY = offsetY;
         }
     }
 
@@ -47,7 +47,7 @@ public class AttachEditor
 
     public void Attach()
     {
-        if(!(_control.DataContext is DesignerViewModel designerViewModel))
+        if(!(_control.DataContext is ProjectEditorViewModel designerViewModel))
             return;
 
         var presenterViewData = _control.FindControl<Control>("RenderViewData");

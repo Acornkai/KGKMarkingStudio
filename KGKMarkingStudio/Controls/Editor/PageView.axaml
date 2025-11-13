@@ -3,6 +3,7 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:behaviors="using:KGKMarkingStudio.Behaviors"
+    xmlns:iac="using:Avalonia.Xaml.Interactions.Custom"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:i="using:Avalonia.Xaml.Interactivity"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -23,10 +24,11 @@
         </VisualBrush>
     </UserControl.Resources>
 
-    <Panel Background="Red">
+    <Panel>
         <Panel x:CompileBindings="False" Background="Transparent">
             <i:Interaction.Behaviors>
                 <behaviors:AttachEditorBehavior />
+                <iac:FocusOnAttachedToVisualTreeBehavior />
             </i:Interaction.Behaviors>
 
             <Panel Background="#FFF5F5F5" />

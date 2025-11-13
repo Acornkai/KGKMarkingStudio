@@ -7,6 +7,7 @@ using KGKMarkingStudio;
 internal sealed partial class Program
 {
     private static Task Main(string[] args) => BuildAvaloniaApp()
+        .UseBrowser()
         .WithInterFont()
         .StartBrowserAppAsync("out");
 

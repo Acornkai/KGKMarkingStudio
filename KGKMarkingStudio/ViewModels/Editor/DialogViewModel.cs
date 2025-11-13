@@ -4,7 +4,7 @@ using KGKMarkingStudio.Model.Editor;
 
 namespace KGKMarkingStudio.ViewModels.Editor;
 
-public class DialogViewModel : ViewModelBase
+public partial class DialogViewModel : ViewModelBase
 {
     private readonly IDialogPresenter _dialogPresenter;
 
