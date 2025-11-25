@@ -2,6 +2,9 @@
 
 namespace KGKMarkingStudio.Model.Renderer;
 
+/// <summary>
+/// 形状状态标志
+/// </summary>
 [Flags]
 public enum ShapeStateFlags
 {

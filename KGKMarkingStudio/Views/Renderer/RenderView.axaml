@@ -7,8 +7,6 @@
              xmlns:vmd="using:KGKMarkingStudio.ViewModels.Designer"
              mc:Ignorable="d" 
              d:DesignWidth="800" 
-             d:DesignHeight="450"
-             d:DataContext="{x:Static vmd:DesignerContext.Editor}"
-             x:DataType="vmc:FrameContainerViewModel">
+             d:DesignHeight="450">
     
 </UserControl>

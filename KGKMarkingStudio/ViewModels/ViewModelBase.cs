@@ -144,7 +144,7 @@ public abstract partial class ViewModelBase : INotifyPropertyChanged
     }
 
 
-    public virtual IDisposable? Subscribe(IObserver<(object? sender, PropertyChangedEventArgs? e)> observer)
+    public virtual IDisposable? Subscribe(IObserver<(object? sender, PropertyChangedEventArgs e)> observer)
     {
         var disposablePropertyChanged = default(IDisposable);
         ObserverSelf(Handler, ref disposablePropertyChanged, default);

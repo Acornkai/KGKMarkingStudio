@@ -65,11 +65,11 @@
                                     Background="Transparent"
                                     ClipToBounds="False">
 
-                                    <renderer:RenderView x:Name="RenderViewData" ClipToBounds="False" />
+                                    <renderer:RenderView x:Name="RenderViewData"  />
 
-                                    <renderer:RenderView x:Name="RenderViewTemplate" ClipToBounds="False" />
+                                    <renderer:RenderView x:Name="RenderViewTemplate"  />
 
-                                    <renderer:RenderView x:Name="RenderViewEditor" ClipToBounds="False" />
+                                    <renderer:RenderView x:Name="RenderViewEditor" Background="Red" />
 
 
                                 </Panel>
